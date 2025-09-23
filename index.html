@@ -221,6 +221,14 @@
             </div>
         </a>
 
+        <a href="https://charmsmods.github.io/Image-to-ASCII-Art/" class="tool-box" data-id="image-to-ascii-generator">
+            <h2>Image to ASCII</h2>
+            <div class="info-popup">
+                <h2>Image to ASCII</h2>
+                <p>Convert any image into an incredible ASCII art representation.</p>
+            </div>
+        </a>
+
     </div>
 
     <script>
@@ -234,7 +242,8 @@
                 const searchTerm = e.target.value.toLowerCase();
                 toolBoxes.forEach(box => {
                     const title = box.querySelector('h2').textContent.toLowerCase();
-                    if (title.includes(searchTerm)) {
+                    // If search term is empty, show all boxes. Otherwise, apply search logic.
+                    if (searchTerm === '' || title.includes(searchTerm)) {
                         box.style.display = 'flex';
                     } else {
                         box.style.display = 'none';
